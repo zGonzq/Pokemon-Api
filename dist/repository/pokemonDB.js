@@ -46,7 +46,7 @@ class PokemonRepository {
     updatePokemon(pokemon) {
         return __awaiter(this, void 0, void 0, function* () {
             const conn = yield this.connection.connect();
-            const [rows] = yield conn.query("UPDATE pokemon SET pokename = ?, HP = ?, attack = ?, defense = ?, spattack = ?, spdefense = ?, speed = ?, dualtype = ? WHERE IDpoke = ?", [pokemon.pokename, pokemon.HP, pokemon.attack, pokemon.defense, pokemon.spattack, pokemon.spdefense, pokemon.speed, pokemon.dualtype, pokemon.IDpoke]);
+            const [rows] = yield conn.query("UPDATE pokemon SET IDpoke = ?, pokename = ?, HP = ?, attack = ?, defense = ?, spattack = ?, spdefense = ?, speed = ?, dualtype = ? WHERE IDpoke = ?", [pokemon.IDpoke, pokemon.pokename, pokemon.HP, pokemon.attack, pokemon.defense, pokemon.spattack, pokemon.spdefense, pokemon.speed, pokemon.dualtype, pokemon.IDpoke]);
             return rows;
         });
     }

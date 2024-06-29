@@ -14,6 +14,7 @@
         }
 
         public async updatePokemon(pokemon: Pokemon): Promise<QueryResult> {
+            console.log(pokemon);
             return this.db.updatePokemon(pokemon);
         }
 

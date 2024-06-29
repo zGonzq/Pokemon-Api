@@ -27,7 +27,7 @@ router.post('/pokemon/add', (req, res) => __awaiter(void 0, void 0, void 0, func
     const result = yield pokemonServices.addPokemon(pokemon);
     res.json(result);
 }));
-router.put('/pokemon/update', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.put('/pokemon/update/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const pokemon = req.body;
     const result = yield pokemonServices.updatePokemon(pokemon);
     res.json(result);

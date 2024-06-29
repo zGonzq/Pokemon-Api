@@ -24,7 +24,7 @@ router.post('/pokemon/add', async (req, res) => {
 });
 
 
-router.put('/pokemon/update', async (req, res) => {
+router.put('/pokemon/update/:id', async (req, res) => {
     const pokemon: Pokemon = req.body;
     const result = await pokemonServices.updatePokemon(pokemon);
     res.json(result);
@@ -35,5 +35,7 @@ router.delete('/pokemon/delete/:id', async (req, res) => {
     const result = await pokemonServices.deletePokemon(parseInt(id));
     res.json(result);
 });
+
+
 
 export default router;

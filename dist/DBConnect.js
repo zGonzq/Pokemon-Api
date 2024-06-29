@@ -21,7 +21,7 @@ class Conexion {
                 host: "localhost",
                 user: "root",
                 password: "gonza123",
-                database: "pokemon",
+                database: "pokemon2",
             });
             return connection;
         });

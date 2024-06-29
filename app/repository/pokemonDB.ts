@@ -35,7 +35,7 @@ export class PokemonRepository {
 
     async updatePokemon(pokemon: iPokemon): Promise<mysql.RowDataPacket[]>{
         const conn = await this.connection.connect();
-        const [rows] = await conn.query("UPDATE pokemon SET pokename = ?, HP = ?, attack = ?, defense = ?, spattack = ?, spdefense = ?, speed = ?, dualtype = ? WHERE IDpoke = ?", [pokemon.pokename, pokemon.HP, pokemon.attack, pokemon.defense, pokemon.spattack, pokemon.spdefense, pokemon.speed, pokemon.dualtype, pokemon.IDpoke]);
+        const [rows] = await conn.query("UPDATE pokemon SET IDpoke = ?, pokename = ?, HP = ?, attack = ?, defense = ?, spattack = ?, spdefense = ?, speed = ?, dualtype = ? WHERE IDpoke = ?", [ pokemon.IDpoke, pokemon.pokename, pokemon.HP, pokemon.attack, pokemon.defense, pokemon.spattack, pokemon.spdefense, pokemon.speed, pokemon.dualtype, pokemon.IDpoke]);
         return rows as mysql.RowDataPacket[];
     }
     
@@ -43,5 +43,4 @@ export class PokemonRepository {
         const conn = await this.connection.connect();
         const [rows] = await conn.query("DELETE FROM pokemon WHERE IDpoke = ?", [id]);
         return rows as mysql.RowDataPacket[];
-    }
-}
+    }}

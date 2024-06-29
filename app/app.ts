@@ -19,7 +19,6 @@ app.use('/api', movesServicesRoutes);
 app.use('/api', pokeAbilityServicesRoutes);
 app.use('/api', typeServicesRoutes);
 
-
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log('Servidor Web Iniciado en http://localhost:' + PORT);
