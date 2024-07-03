@@ -28,7 +28,6 @@ class PokemonServices {
     }
     updatePokemon(pokemon) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(pokemon);
             return this.db.updatePokemon(pokemon);
         });
     }
